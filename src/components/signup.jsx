@@ -39,13 +39,11 @@ const Signup = () => {
             <TextField label="Email" variant="outlined" sx={{ mb: 2, width: "80%", ".MuiInputBase-input": { borderRadius: "10px" } }} />
             <TextField label="Password" type="password" variant="outlined" sx={{ mb: 2, width: "80%", ".MuiInputBase-input": { borderRadius: "10px" } }} />
             <TextField label="Address" variant="outlined" sx={{ mb: 2, width: "80%", ".MuiInputBase-input": { borderRadius: "10px" } }} />
-            <Button variant="contained" sx={{ width: "50%", backgroundColor: "#EA67CB", ":hover": { boxShadow: "0 0 15px #EA67CB", backgroundColor: "#EA67CB" } }}>
+            <Button variant="contained" sx={{ width: "50%", marginBottom: '15px', backgroundColor: "#EA67CB", ":hover": { boxShadow: "0 0 15px #EA67CB", backgroundColor: "#EA67CB" } }}>
               Sign Up
             </Button>
 
-            {/* <RouterLink to="/signin" variant="body2" sx={{ mt: 2 }}>
-  <Button>Have an account already? Sign in</Button>
-</RouterLink> */}
+         
            <RouterLink to="/signin" variant="body2" sx={{ mt: 2 }}>
               Have an account already? Sign in
             </RouterLink>
