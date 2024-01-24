@@ -7,10 +7,10 @@ import {
   Button,
   Link as MuiLink,
 } from "@mui/material";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import sign_up_page from "../assets/sign_up_page.png"; // Background image
 import bridge from "../assets/bridge.png"; // Logo image
-
+import axios from 'axios'
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -35,7 +35,8 @@ const Signup = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    
+    console.log('here is the signup')
+    console.log(formData)
     // here I validated each field and set an error message if empty- 
     if (!formData.name) {
       setErrorMessage({ field: 'name', message: 'Please enter your name' });
@@ -50,27 +51,21 @@ const Signup = () => {
       setErrorMessage({ field: 'address', message: 'Please enter your address' });
       return;
     }
-  
+    
 
     const API_URL = 'https://backend-x-5.onrender.com/api/users';
 
     try {
-        const response = await fetch(API_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
+        const response = await axios.post(API_URL, {
+         formData
         });
+        console.log("Response data:", response); 
     
-        const data = await response.json();
-        console.log("Response data:", data); // Log the response data
-    
-        if (response.ok) {
+        if (response.status === 201) {
           console.log("Signup successful, navigating to profile setup");
           navigate('/profileSetup');
         } else {
-          console.error('Signup error:', data);
+          console.error('Signup error:', response);
         }
       } catch (error) {
         console.error('Signup request failed:', error);
@@ -140,11 +135,11 @@ const Signup = () => {
               Sign Up
             </Button>
             
-            <RouterLink to="/signin" style={{ textDecoration: 'none' }}>
+            <Link to="/signin" style={{ textDecoration: 'none' }}>
               <MuiLink variant="body2" sx={{ mt: 2 }}>
                 Have an account already? Sign in
               </MuiLink>
-            </RouterLink>
+            </Link>
   
           </Box>
         </Box>

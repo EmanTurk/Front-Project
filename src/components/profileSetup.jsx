@@ -14,14 +14,17 @@ import {
 } from "@mui/material";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import ReactFlagsSelect from "react-flags-select";
+import axios from 'axios';
 
 const ProfileSetup = () => {
   const [profile, setProfile] = useState({
     profilePicture: "",
+    username: "",
     linkedIn: "",
     fieldOfWork: "",
     interests: [],
     location: "",
+    bio:""
   });
 
   const fields = [
@@ -38,7 +41,6 @@ const ProfileSetup = () => {
     "Other",
   ];
 
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setProfile((prevProfile) => ({
@@ -47,11 +49,29 @@ const ProfileSetup = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Profile Data:", profile);
-    // Here API call to the backend-check how to
+  
+    const API_URL = 'https://backend-x-5.onrender.com/api/updateProfile';
+    const token = localStorage.getItem('token'); 
+  
+    try {
+      const response = await axios.post(API_URL, profile, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+  
+      if (response.status === 200) {
+        console.log("Profile saved successfully:", response.data);
+      } else {
+        console.error("Error saving profile:", response.status, response.data);
+      }
+    } catch (error) {
+      console.error("Error in request:", error.response ? error.response.data : error.message);
+    }
   };
+  
 
   return (
     <Container maxWidth="sm" sx={{ mt: 4 }}>
@@ -75,7 +95,7 @@ const ProfileSetup = () => {
           }}>
           <Avatar
             sx={{ width: 100, height: 100 }}
-            src={profile.profilePicture} // hereReplace with the path to the user's image
+            src={profile.profilePicture} 
             alt="User Profile Picture"
           />
           <Box>
@@ -85,9 +105,7 @@ const ProfileSetup = () => {
               id="profile-picture-upload"
               type="file"
               onChange={(event) => {
-                // Handle the file upload logic here
-                // For example, you could create a URL for the uploaded file:
-                // setProfile({...profile, profilePicture: URL.createObjectURL(event.target.files[0])});
+               
               }}
             />
             <label htmlFor="profile-picture-upload">
@@ -182,7 +200,7 @@ const ProfileSetup = () => {
             multiline
             rows={4}
           />
-          <Button
+           <Button
             variant="contained"
             onClick={handleSubmit}
             sx={{
