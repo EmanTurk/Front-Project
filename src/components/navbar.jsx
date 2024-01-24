@@ -35,7 +35,7 @@ const ResponsiveNavBar = () => {
             borderRadius: '10px 10px 0 0',
           }}
         >
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/home" />
           <BottomNavigationAction label="Search" icon={<SearchIcon />} component={Link} to="/search" />
           <BottomNavigationAction label="Profile" icon={<ProfileIcon />} component={Link} to="/profile" />
         </BottomNavigation>

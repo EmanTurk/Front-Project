@@ -14,7 +14,7 @@ const MainRoutes = () => {
   const location = useLocation();
 
   const shouldShowNavbar = () => {
-    const pathsWithoutNavbar = ['/signup', '/signin', '/profileSetup'];
+    const pathsWithoutNavbar = ['/signup', '/signin', '/profileSetup', '/'];
     return !pathsWithoutNavbar.includes(location.pathname);
   };
 
