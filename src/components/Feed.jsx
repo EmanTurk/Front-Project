@@ -16,7 +16,7 @@ const Feed = () => {
           username: "Danny",
           date: "January 24, 2024",
           imageUrl: danny,
-          caption: "Loving these nature vibes! 🌳🌞 #nature",
+          caption: "New Profile Pic! To post it on LinkedIn? 🌞 #Professional",
           likes: 120,
           comments: [
             {

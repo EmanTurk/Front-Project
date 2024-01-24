@@ -11,12 +11,12 @@ const Post = ({ post }) => {
       />
       <CardMedia
         component="img"
-        height="360" // Adjust this value to control the height of the image
+        height="360" 
         image={post.imageUrl}
         alt="Post image"
         sx={{ 
           maxWidth: 900, // Max width
-          objectFit: 'contain', // Ensures the whole image fits within the dimensions without cropping
+          objectFit: 'contain', // to avoid cropping this Ensures the whole image fits 
           margin: 'auto', // Centers the image horizontally
         }}
       />
