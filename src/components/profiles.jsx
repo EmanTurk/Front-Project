@@ -26,7 +26,7 @@ const ProfilePage = () => {
     followersCount: "321k",
     followingCount: "125",
     profilePicture: "",
-    linkedInProfile: "https://linkedin.com/in/username",
+    linkedInProfile: "https://www.linkedin.com/in/emanturkman/",
   };
 const navigate = useNavigate()
   const [tabValue, setTabValue] = useState(0);
