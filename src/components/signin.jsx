@@ -26,7 +26,7 @@ const SignIn = () => {
         email: email,
         password: password,
       });
-
+      window.localStorage.setItem('user', JSON.stringify(response.data))
       // Handle the response, store tokens or user data in the frontend
       console.log('Logged in successfully', response.data);
       navigate('/profile');

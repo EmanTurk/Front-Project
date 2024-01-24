@@ -60,9 +60,10 @@ const Signup = () => {
          formData
         });
         console.log("Response data:", response); 
-    
+        
         if (response.status === 201) {
           console.log("Signup successful, navigating to profile setup");
+          window.localStorage.setItem('user', JSON.stringify(response.data))
           navigate('/profileSetup');
         } else {
           console.error('Signup error:', response);
