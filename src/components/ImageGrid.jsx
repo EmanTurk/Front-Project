@@ -2,11 +2,10 @@ import React from 'react';
 import { Grid, Paper } from '@mui/material';
 
 const ImageGrid = () => {
-  // Array of image URLs, replace with actual data from your backend
+  // ----replace with actual data from your backend
   const images = [
     "/path-to-image-1.jpg",
-    "/path-to-image-2.jpg",
-    // ... more images
+    "/path-to-image-2.jpg", //placeHolders for now
   ];
 
   return (

@@ -70,18 +70,25 @@ const ProfilePage = () => {
             </Typography>
           </Box>
           {/* section-2Tab-like buttons for different sections */}
-          <AppBar position="static" color="default">
-            <Tabs
-              value={tabValue}
-              onChange={handleTabChange}
-              indicatorColor="secondary"
-              textColor="secondary"
-              variant="fullWidth"
-              aria-label="profile tabs">
-              <Tab icon={<GridViewIcon />} aria-label="Posts" />
-              <Tab icon={<PeopleIcon />} aria-label="Connections" />
-            </Tabs>
-          </AppBar>
+          <AppBar position="static" color="default" sx={{ backgroundColor: '#FFFFFF' }}>
+          <Tabs
+            value={tabValue}
+            onChange={handleTabChange}
+            indicatorColor="secondary"
+            textColor="secondary"
+            variant="fullWidth"
+            aria-label="profile tabs"
+            sx={{
+              '.MuiTabs-indicator': {
+                backgroundColor: '#EA67CB', // Pink color for the indicator
+              }
+            }}
+          >
+            <Tab icon={<GridViewIcon />} aria-label="Posts" />
+            <Tab icon={<PeopleIcon />} aria-label="Connections" />
+          </Tabs>
+        </AppBar>
+
         </Box>
         {/*  render content based on selected tab */}
         {tabValue === 0 && <ImageGrid />}

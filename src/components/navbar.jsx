@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
 import {
   AppBar,
   Toolbar,
@@ -21,7 +23,7 @@ const ResponsiveNavBar = () => {
   return (
     <>
       {matches ? (
-        // Mobile Bottom Navigation-Will change to the buttom when switching to a smaller screen.
+        // Mobile Bottom Navigation
         <BottomNavigation
           value={value}
           onChange={(event, newValue) => {
@@ -32,27 +34,27 @@ const ResponsiveNavBar = () => {
             width: '100%',
             position: 'fixed',
             bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.8)', // Light white shade
-            borderRadius: '10px 10px 0 0' // Rounded top borders
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            borderRadius: '10px 10px 0 0'
           }}
         >
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/home" />
           <BottomNavigationAction label="Search" icon={<SearchIcon />} />
-          <BottomNavigationAction label="Profile" icon={<ProfileIcon />} />
+          <BottomNavigationAction label="Profile" icon={<ProfileIcon />} component={Link} to="/profile" />
         </BottomNavigation>
       ) : (
         // Desktop Top Navigation
         <AppBar position="static" color="default" style={{ borderRadius: 10, margin: '10px', backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
           <Toolbar>
-            <img src={Logo} alt="Logo" style={{ height: '80px' }} /> {/* Adjust height as needed */}
+            <img src={Logo} alt="Logo" style={{ height: '80px' }} />
             <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}>
-              <IconButton color="inherit" aria-label="home">
+              <IconButton color="inherit" aria-label="home" component={Link} to="/home">
                 <HomeIcon />
               </IconButton>
               <IconButton color="inherit" aria-label="search" style={{ marginLeft: '20px' }}>
                 <SearchIcon />
               </IconButton>
-              <IconButton color="inherit" aria-label="profile" style={{ marginLeft: '20px' }}>
+              <IconButton color="inherit" aria-label="profile" component={Link} to="/profile" style={{ marginLeft: '20px' }}>
                 <ProfileIcon />
               </IconButton>
             </div>
@@ -62,6 +64,5 @@ const ResponsiveNavBar = () => {
     </>
   );
 };
-
 
 export default ResponsiveNavBar;

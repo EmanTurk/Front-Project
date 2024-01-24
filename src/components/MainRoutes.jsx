@@ -7,6 +7,7 @@ import SignIn from './signin';
 import ProfileSetup from './profileSetup';
 import ProfilePage from './profiles';
 import ResponsiveNavBar from './navbar';
+import Feed from "./Feed";
 
 const MainRoutes = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const MainRoutes = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/profileSetup" element={<ProfileSetup />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/home" element={<Feed />} />
       </Routes>
     </>
   );
