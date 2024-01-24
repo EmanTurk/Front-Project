@@ -20,11 +20,11 @@ const Feed = () => {
           likes: 120,
           comments: [
             {
-              username: "user2",
+              username: "SaraB",
               comment: "Wow, looks amazing!"
             },
             {
-              username: "user3",
+              username: "Conny",
               comment: "I wish I was there!"
             }
           ]
@@ -34,7 +34,7 @@ const Feed = () => {
           userAvatar: sara,
           username: "Sara",
           date: "January 23, 2024",
-          imageUrl: "https://placeimg.com/640/480/city/1",
+          imageUrl: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2744&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           caption: "City lights and starry nights 🌃",
           likes: 95,
           comments: [
@@ -46,10 +46,10 @@ const Feed = () => {
         },
         {
           id: 3,
-          userAvatar: "https://placeimg.com/64/64/people/3",
+          userAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           username: "user3",
           date: "January 22, 2024",
-          imageUrl: "https://placeimg.com/640/480/tech/1",
+          imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           caption: "Working on my new project! #developerLife",
           likes: 150,
           comments: []
