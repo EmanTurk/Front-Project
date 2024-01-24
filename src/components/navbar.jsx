@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-
 import {
   AppBar,
   Toolbar,
@@ -26,20 +25,18 @@ const ResponsiveNavBar = () => {
         // Mobile Bottom Navigation
         <BottomNavigation
           value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
+          onChange={(event, newValue) => setValue(newValue)}
           showLabels
           style={{
             width: '100%',
             position: 'fixed',
             bottom: 0,
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '10px 10px 0 0'
+            borderRadius: '10px 10px 0 0',
           }}
         >
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/home" />
-          <BottomNavigationAction label="Search" icon={<SearchIcon />} />
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+          <BottomNavigationAction label="Search" icon={<SearchIcon />} component={Link} to="/search" />
           <BottomNavigationAction label="Profile" icon={<ProfileIcon />} component={Link} to="/profile" />
         </BottomNavigation>
       ) : (
@@ -51,10 +48,10 @@ const ResponsiveNavBar = () => {
               <IconButton color="inherit" aria-label="home" component={Link} to="/home">
                 <HomeIcon />
               </IconButton>
-              <IconButton color="inherit" aria-label="search" style={{ marginLeft: '20px' }}>
+              <IconButton color="inherit" aria-label="search" style={{ marginLeft: '20px' }} component={Link} to="/search">
                 <SearchIcon />
               </IconButton>
-              <IconButton color="inherit" aria-label="profile" component={Link} to="/profile" style={{ marginLeft: '20px' }}>
+              <IconButton color="inherit" aria-label="profile" style={{ marginLeft: '20px' }} component={Link} to="/profile">
                 <ProfileIcon />
               </IconButton>
             </div>

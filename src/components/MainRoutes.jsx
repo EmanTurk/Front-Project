@@ -8,6 +8,7 @@ import ProfileSetup from './profileSetup';
 import ProfilePage from './profiles';
 import ResponsiveNavBar from './navbar';
 import Feed from "./Feed";
+import SearchPage from "./SearchPage"; 
 
 const MainRoutes = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const MainRoutes = () => {
         <Route path="/profileSetup" element={<ProfileSetup />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/home" element={<Feed />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </>
   );

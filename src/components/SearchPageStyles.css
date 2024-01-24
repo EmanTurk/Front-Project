@@ -1,0 +1,19 @@
+@keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #ea67cb;
+    }
+    50% {
+      box-shadow: 0 0 20px #6acdf8;
+    }
+    70% {
+      box-shadow: 0 0 20px #8f6aed;
+    }
+  }
+  
+  .glowingSearchBar {
+    animation: glow 1.5s ease-in-out infinite;
+    width: 60%; 
+    border-radius: 25px;  
+    ;
+  }
+  
